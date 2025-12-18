@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <title>Impressum & Datenschutz</title>
+  <meta name="description" content="Impressum und Datenschutzerklärung" />
+
+  <style>
+    :root{
+      --bg: #070A08;
+      --panel: rgba(16, 24, 19, .72);
+      --panel-2: rgba(12, 18, 15, .66);
+      --text: #E8F2EC;
+      --muted: rgba(232, 242, 236, .72);
+      --line: rgba(232, 242, 236, .12);
+
+      /* sattes dunkles „Giftgrün“ */
+      --accent: #18E06F;
+      --accent-2: #0FB85A;
+
+      --shadow: 0 14px 40px rgba(0,0,0,.45);
+      --radius: 22px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height: 100%; }
+    body{
+      margin: 0;
+      background:
+        radial-gradient(900px 600px at 10% 0%, rgba(24,224,111,.22), transparent 60%),
+        radial-gradient(900px 600px at 90% 15%, rgba(15,184,90,.18), transparent 55%),
+        radial-gradient(1200px 800px at 40% 120%, rgba(24,224,111,.10), transparent 50%),
+        linear-gradient(180deg, #050705, #070A08 40%, #060807 100%);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    header{
+      display:flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 18px 8px 22px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      width: fit-content;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: rgba(5, 10, 8, .45);
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.28);
+    }
+    .dot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(24,224,111,.12), 0 0 22px rgba(24,224,111,.35);
+    }
+    h1{
+      font-size: clamp(26px, 2.6vw, 40px);
+      margin: 0;
+      letter-spacing: .2px;
+    }
+    .subtitle{
+      color: var(--muted);
+      margin: 0;
+      max-width: 70ch;
+    }
+
+    nav{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(16, 24, 19, .35);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+    }
+    .pill:hover{
+      border-color: rgba(24,224,111,.45);
+      text-decoration:none;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset: 0;
+      background:
+        radial-gradient(700px 240px at 10% 0%, rgba(24,224,111,.14), transparent 60%),
+        radial-gradient(700px 240px at 90% 0%, rgba(15,184,90,.10), transparent 60%);
+      pointer-events:none;
+    }
+
+    .card-inner{
+      position: relative;
+      padding: 22px;
+    }
+
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: .2px;
+    }
+
+    .kicker{
+      display:inline-block;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(232, 242, 236, .68);
+      border: 1px solid var(--line);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.18);
+      margin-bottom: 12px;
+    }
+
+    .hr{
+      height: 1px;
+      background: var(--line);
+      margin: 16px 0;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .info{
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(0,0,0,.18);
+      padding: 14px;
+    }
+
+    .info strong{ color: var(--text); }
+    .muted{ color: var(--muted); }
+
+    ul{ margin: 10px 0 0 20px; }
+    li{ margin: 6px 0; }
+
+    footer{
+      margin-top: 18px;
+      color: rgba(232, 242, 236, .55);
+      font-size: 13px;
+      padding: 0 8px;
+    }
+
+    @media (min-width: 860px){
+      .two-col{ grid-template-columns: 1.1fr .9fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="badge">
+        <span class="dot" aria-hidden="true"></span>
