@@ -3,193 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="index,follow" />
   <title>Impressum & Datenschutz</title>
-  <meta name="description" content="Impressum und Datenschutzerklärung" />
 
   <style>
     :root{
-      --bg: #070A08;
-      --panel: rgba(16, 24, 19, .72);
-      --panel-2: rgba(12, 18, 15, .66);
-      --text: #E8F2EC;
-      --muted: rgba(232, 242, 236, .72);
-      --line: rgba(232, 242, 236, .12);
-
-      /* sattes dunkles „Giftgrün“ */
-      --accent: #18E06F;
-      --accent-2: #0FB85A;
-
-      --shadow: 0 14px 40px rgba(0,0,0,.45);
-      --radius: 22px;
+      --bg:#070A08;
+      --panel:rgba(16,24,19,.72);
+      --panel2:rgba(12,18,15,.66);
+      --text:#E8F2EC;
+      --muted:rgba(232,242,236,.7);
+      --line:rgba(232,242,236,.12);
+      --accent:#18E06F;
+      --accent2:#0FB85A;
+      --radius:22px;
+      --shadow:0 14px 40px rgba(0,0,0,.45);
     }
 
-    
-    *{ box-sizing: border-box; }
-    html,body{ height: 100%; }
+    *{box-sizing:border-box}
     body{
-      margin: 0;
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       background:
         radial-gradient(900px 600px at 10% 0%, rgba(24,224,111,.22), transparent 60%),
         radial-gradient(900px 600px at 90% 15%, rgba(15,184,90,.18), transparent 55%),
-        radial-gradient(1200px 800px at 40% 120%, rgba(24,224,111,.10), transparent 50%),
-        linear-gradient(180deg, #050705, #070A08 40%, #060807 100%);
-      color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      line-height: 1.6;
+        linear-gradient(180deg,#050705,#070A08 50%,#060807);
+      color:var(--text);
+      line-height:1.6;
     }
 
-    a{ color: var(--accent); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 28px 18px 56px;
-    }
+    .wrap{max-width:960px;margin:auto;padding:32px 18px 64px}
 
-    header{
-      display:flex;
-      flex-direction: column;
-      gap: 14px;
-      padding: 18px 8px 22px;
-    }
+    header{margin-bottom:24px}
+    h1{font-size:clamp(28px,3vw,40px);margin:0 0 8px}
+    .subtitle{color:var(--muted);max-width:70ch}
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      width: fit-content;
-      padding: 10px 12px;
-      border: 1px solid var(--line);
-      background: rgba(5, 10, 8, .45);
-      border-radius: 999px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.28);
-    }
-    .dot{
-      width: 10px; height: 10px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(24,224,111,.12), 0 0 22px rgba(24,224,111,.35);
-    }
-    h1{
-      font-size: clamp(26px, 2.6vw, 40px);
-      margin: 0;
-      letter-spacing: .2px;
-    }
-    .subtitle{
-      color: var(--muted);
-      margin: 0;
-      max-width: 70ch;
-    }
-
-    nav{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 6px;
-    }
+    nav{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
     .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 10px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(16, 24, 19, .35);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 26px rgba(0,0,0,.22);
-    }
-    .pill:hover{
-      border-color: rgba(24,224,111,.45);
-      text-decoration:none;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 14px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.25);
+      backdrop-filter:blur(10px);
     }
 
     .card{
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      margin-top:20px;
     }
 
-    .card::before{
-      content:"";
-      position:absolute;
-      inset: 0;
-      background:
-        radial-gradient(700px 240px at 10% 0%, rgba(24,224,111,.14), transparent 60%),
-        radial-gradient(700px 240px at 90% 0%, rgba(15,184,90,.10), transparent 60%);
-      pointer-events:none;
-    }
+    .inner{padding:24px}
+    h2{margin-top:0}
+    .hr{height:1px;background:var(--line);margin:18px 0}
 
-    .card-inner{
-      position: relative;
-      padding: 22px;
-    }
-
-    .card h2{
-      margin: 0 0 10px;
-      font-size: 22px;
-      letter-spacing: .2px;
-    }
-
-    .kicker{
-      display:inline-block;
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(232, 242, 236, .68);
-      border: 1px solid var(--line);
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.18);
-      margin-bottom: 12px;
-    }
-
-    .hr{
-      height: 1px;
-      background: var(--line);
-      margin: 16px 0;
-    }
-
-    .two-col{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .info{
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(0,0,0,.18);
-      padding: 14px;
-    }
-
-    .info strong{ color: var(--text); }
-    .muted{ color: var(--muted); }
-
-    ul{ margin: 10px 0 0 20px; }
-    li{ margin: 6px 0; }
+    ul{margin:8px 0 0 20px}
+    li{margin:6px 0}
 
     footer{
-      margin-top: 18px;
-      color: rgba(232, 242, 236, .55);
-      font-size: 13px;
-      padding: 0 8px;
-    }
-
-    @media (min-width: 860px){
-      .two-col{ grid-template-columns: 1.1fr .9fr; }
+      margin-top:28px;
+      font-size:13px;
+      color:rgba(232,242,236,.55);
     }
   </style>
 </head>
@@ -197,5 +75,152 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="badge">
-        <span class="dot" aria-hidden="true"></span>
+      <h1>Impressum & Datenschutz</h1>
+      <p class="subtitle">
+        Rechtliche Informationen für diese Website und verlinkte Inhalte.
+      </p>
+      <nav>
+        <a class="pill" href="#impressum">Impressum</a>
+        <a class="pill" href="#datenschutz">Datenschutz</a>
+      </nav>
+    </header>
+
+    <!-- IMPRESSUM -->
+    <section id="impressum" class="card">
+      <div class="inner">
+        <h2>Impressum</h2>
+
+        <p><strong>Angaben gemäß § 5 DDG</strong></p>
+
+        <p>
+          Alexander Schoog<br>
+          Hahnenweg 7b<br>
+          41466 Neuss<br>
+          Deutschland
+        </p>
+
+        <p>
+          <strong>Kontakt</strong><br>
+          Telefon: +49 (0) 2841 396463 <br>
+          E-Mail: booking@nitrax.com
+        </p>
+
+        <p>
+          
+        </p>
+
+        <div class="hr"></div>
+
+        <p><strong>Haftung für Inhalte</strong><br>
+          Als Diensteanbieter bin ich gemäß §7 Abs.1 DDG für eigene Inhalte auf diesen Seiten
+          nach den allgemeinen Gesetzen verantwortlich.
+        </p>
+
+        <p><strong>Haftung für Links</strong><br>
+          Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen
+          Einfluss habe. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.
+        </p>
+
+        <p><strong>Urheberrecht</strong><br>
+          Die durch den Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen
+          dem deutschen Urheberrecht.
+        </p>
+      </div>
+    </section>
+
+    <!-- DATENSCHUTZ -->
+    <section id="datenschutz" class="card">
+      <div class="inner">
+        <h2>Datenschutzerklärung</h2>
+
+        <p><strong>1. Verantwortlicher</strong></p>
+        <p>
+           Alexander Schoog<br>
+          Hahnenweg 7b<br>
+          41466 Neuss<br>
+          E-Mail: booking@nitrax.com
+        </p>
+
+        <div class="hr"></div>
+
+        <p><strong>2. Hosting über GitHub Pages</strong></p>
+        <p>
+          Diese Website wird über GitHub Pages gehostet. Beim Aufruf der Website werden durch den
+          Hosting-Anbieter technisch notwendige Daten (z. B. IP-Adresse, Datum und Uhrzeit,
+          Browserinformationen) verarbeitet.
+        </p>
+        <p>
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherem Betrieb).
+        </p>
+
+        <div class="hr"></div>
+
+        <p><strong>3. Cookies & Tracking</strong></p>
+        <p>
+          Diese Website verwendet keine eigenen Cookies und kein Tracking.
+        </p>
+
+        <div class="hr"></div>
+
+        <p><strong>4. Verlinkungen zu sozialen Netzwerken</strong></p>
+        <p>
+          Diese Website enthält Links zu externen Profilen auf Instagram, Facebook und TikTok.
+          Beim Anklicken der Links verlässt du diese Website. Es handelt sich um reine Verlinkungen,
+          nicht um eingebettete Plugins.
+        </p>
+
+        <div class="hr"></div>
+
+        <p><strong>5. Externe Ticketanbieter</strong></p>
+        <p>
+          Es wird auf externe Ticketplattformen verwiesen. Der Ticketkauf erfolgt ausschließlich
+          über Drittanbieter. Für deren Datenverarbeitung bin ich nicht verantwortlich.
+        </p>
+
+        <div class="hr"></div>
+
+        <p><strong>6. Fotodatenbank</strong></p>
+        <p>
+          Auf dieser Website können Fotos angezeigt werden. Beim reinen Betrachten der Bilder
+          erfolgt keine aktive Datenerhebung durch den Betreiber dieser Website.
+        </p>
+
+        <div class="hr"></div>
+
+        <p><strong>7. Kontaktaufnahme per E-Mail</strong></p>
+        <p>
+          Bei Kontaktaufnahme per E-Mail werden die übermittelten Daten ausschließlich zur
+          Bearbeitung der Anfrage verwendet und anschließend gelöscht.
+        </p>
+
+        <div class="hr"></div>
+
+        <p><strong>8. Rechte der betroffenen Personen</strong></p>
+        <ul>
+          <li>Auskunft über gespeicherte Daten</li>
+          <li>Berichtigung oder Löschung</li>
+          <li>Einschränkung der Verarbeitung</li>
+          <li>Widerspruch gegen die Verarbeitung</li>
+          <li>Datenübertragbarkeit</li>
+        </ul>
+
+        <div class="hr"></div>
+
+        <p><strong>9. SSL- / TLS-Verschlüsselung</strong></p>
+        <p>
+          Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung (https),
+          sofern korrekt über GitHub Pages eingerichtet.
+        </p>
+
+        <div class="hr"></div>
+
+        <p><strong>Stand</strong>: 18. Dezember 2025</p>
+      </div>
+    </section>
+
+    <footer>
+      Diese Seite dient als rechtliche Information für verlinkte Inhalte (z. B. Linktree).
+    </footer>
+  </div>
+</body>
+</html>
